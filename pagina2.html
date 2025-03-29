@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Amor💕</title>
+    <link rel="icon" type="image/png" href="snoo.jpg">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffccff;
+            position: relative;
+        }
+        
+        h1 {
+            color: #ff4081;
+        }
+
+        .sobre {
+            width: 150px;
+            cursor: pointer;
+            transition: transform 0.5s;
+        }
+
+        .sobre:hover {
+            transform: scale(1.1);
+        }
+
+        .carta {
+            display: none;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            font-size: 18px;
+            text-align: left;
+            line-height: 1.5;
+        }
+
+        .carta p {
+            display: inline;
+            white-space: pre-wrap;
+        }
+
+        .boton {
+            display: none;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+
+        .boton:hover {
+            transform: scale(1.1);
+        }
+        
+        
+        #boton2 {
+    display: none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #ff4081;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#boton2:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+        .margarita {
+            position: absolute;
+            width: 50px;
+            opacity: 0;
+            animation: caer 2s ease-out;
+        }
+
+        @keyframes caer {
+            0% { transform: translateY(-50px); opacity: 1; }
+            100% { transform: translateY(500px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Para mi amor 💌</h1>
+    <img src="https://cdn-icons-png.flaticon.com/512/2331/2331938.png" class="sobre" onclick="abrirCarta()">
+    
+    <div class="carta" id="carta">
+        <p id="texto"></p>
+    </div>
+    
+    <button class="boton" id="boton" onclick="mostrarMargaritas()">Si te emocionaste, toca aquí 🌼</button>
+ <button class="boton2" id="boton2" onclick="window.location.href='pagina3.html'">
+        Ir a la siguiente sorpresa 💖
+    </button>
+    
+
+    <script>
+        function abrirCarta() {
+            document.querySelector('.sobre').style.display = 'none';
+            document.getElementById('carta').style.display = 'block';
+            escribirTexto("Mi amor, desde el primer día que te vi, supe que eras alguien especial y quede completamente enamorado. 💖\nCada momento contigo es un regalo, cada sonrisa tuya ilumina mi mundo.\nEres lo mejor que me ha pasado y siempre quiero estar a tu lado.\nTe amo infinitamente. 💕");
+        }
+
+        function escribirTexto(texto) {
+            let i = 0;
+            let velocidad = 50;
+            function escribir() {
+                if (i < texto.length) {
+                    document.getElementById('texto').innerHTML += texto.charAt(i);
+                    i++;
+                    setTimeout(escribir, velocidad);
+                } else {
+                    document.getElementById('boton').style.display = 'inline-block';
+                    document.getElementById('boton2').style.display = 'inline-block';
+                }
+            }
+            escribir();
+        }
+
+        function mostrarMargaritas() {
+            for (let i = 0; i < 10; i++) {
+                let margarita = document.createElement("img");
+                margarita.src = "margaritas.png";
+                margarita.classList.add("margarita");
+                margarita.style.left = Math.random() * window.innerWidth + "px";
+                margarita.style.top = "-50px";
+                document.body.appendChild(margarita);
+                setTimeout(() => margarita.remove(), 2000);
+            }
+        }
+    </script>
+</body>
+</html>

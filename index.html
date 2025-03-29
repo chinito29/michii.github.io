@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversario</title>
+    <link rel="icon" type="image/png" href="Corazon.png">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #a1c4fd);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            font-weight: bold;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+        .collage {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .photo-frame {
+            width: 220px;
+            padding: 10px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .photo-frame img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .date {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+        .frases {
+            font-size: 1.5em;
+            margin: 20px;
+            font-style: italic;
+            color: #ffffff;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .video-container {
+            margin-top: 20px;
+        }
+        .fecha-aniversario {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            margin-top: 20px;
+        }
+        
+         .fecha-aniversario a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .border-images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        .border-images img {
+            position: absolute;
+            width: 100px;
+            height: auto;
+        }
+
+        .top-left { top: 10px; left: 10px; }
+        .top-right { top: 10px; right: 10px; }
+        .bottom-left { bottom: 10px; left: 10px; }
+        .bottom-right { bottom: 10px; right: 10px; }
+    </style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let audio = document.getElementById("musica");
+        
+        // Esperar el primer clic para evitar bloqueos del navegador
+        document.body.addEventListener("click", function() {
+            audio.currentTime = 45 // Cambia el número por el segundo donde quieres que empiece
+            audio.play();
+        }, { once: true });
+    });
+</script>
+</head>
+<body>
+    <audio id="musica" autoplay loop>
+        <source src="Audio de WhatsApp 2025-02-26 a las 21.14.01_df1d5cc6.mp3" type="audio/mpeg">
+        Tu navegador no soporta el audio.
+    </audio>
+    
+    <div class="border-images">
+        <img src="shi.png" alt="Snoopy" class="top-left">
+        <img src="margaritas.png" alt="Margaritas" class="top-right">
+        <img src="snoopy.png" alt="Snoopy" class="bottom-left">
+        <img src="margaritas.png" alt="Margaritas" class="bottom-right">
+    </div>
+
+    <h1>Feliz Aniversarioo, mi amorrrr💗</h1>
+    <p class="frases">Eres lo mejor que me ha pasado, te amooo con todo mi corazónnn. 💖</p>
+    
+    <div class="collage">
+        <div class="photo-frame">
+            <img src="foto1.jpg" alt="Foto 1">
+            <p class="date">24/04/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto2.jpg" alt="Foto 2">
+            <p style="color: #ff9a9e; margin-top: 8px;
+            font-weight: bold;">25/07/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto3.jpg" alt="Foto 3">
+            <p style="color: aqua; margin-top: 8px;
+            font-weight: bold;">23/09/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto4.jpg" alt="Foto 4">
+            <p style="color: #a1c4fd; margin-top: 8px;
+            font-weight: bold;">11/10/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto5.jpg" alt="Foto 5">
+            <p  style="color: #fda1ef; margin-top: 8px;
+            font-weight: bold;">14/10/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto6.jpg" alt="Foto 6">
+            <p  style="color: #1cb1af; margin-top: 8px;
+            font-weight: bold;">22/11/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto7.jpg" alt="Foto 7">
+            <p  style="color: #51ff1c; margin-top: 8px;
+            font-weight: bold;">22/11/2024</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto8.jpg" alt="Foto 8">
+            <p style="color: #ff3e1c; margin-top: 8px;
+            font-weight: bold;">20/01/2025</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto9.jpg" alt="Foto 9">
+            <p style="color: #951cff; margin-top: 8px;
+            font-weight: bold;">27/01/2025</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto10.jpg" alt="Foto 10">
+            <p class="date">21/02/2025</p>
+        </div>
+        <div class="photo-frame">
+            <img src="foto11.jpg" alt="Foto 11">
+        </div>
+        <div class="photo-frame">
+            <img src="foto12.jpg" alt="Foto 12">
+        </div>
+        <div class="photo-frame">
+            <img src="foto13.jpg" alt="Foto 13">
+        </div>
+    </div>
+    
+    <p class="frases">Cada momento a tu lado es un tesoro. Gracias por estos 11 meses tan maravillososs ✨</p>
+    
+
+    <div class="fecha-aniversario">
+        <a href="pagina2.html">29/03/25</a>
+    </div>
+</body>
+</html>

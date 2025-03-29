@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raspadita del Amor 💖</title>
+    <link rel="icon" type="image/png" href="margaritas.png">
+
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffccff;
+            position: relative;
+        }
+
+        h1 {
+            color: #ff4081;
+        }
+
+        .contenedor {
+            position: relative;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .mensaje {
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 20px;
+            z-index: 1;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        .decoracion {
+            position: absolute;
+            width: 80px;
+        }
+
+        .snoopy {
+            top: 20px;
+            left: 20px;
+        }
+
+        .margarita1 {
+            bottom: 20px;
+            left: 20px;
+        }
+
+        .margarita2 {
+            bottom: 20px;
+            right: 20px;
+        }
+
+
+        .formulario {
+            margin-top: 50px;
+            font-size: 20px;
+        }
+
+        .boton {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .si {
+            background-color: #ff4081;
+            color: white;
+        }
+
+        .no {
+            background-color: #607d8b;
+            color: white;
+        }
+
+        .boton:hover {
+            transform: scale(1.1);
+        }
+
+        .resultado {
+            font-size: 24px;
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        .animacion {
+            position: absolute;
+            font-size: 30px;
+            animation: flotar 2s infinite;
+        }
+
+        @keyframes flotar {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100px); opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+    <h1>Rasca para ver tu sorpresa 💌</h1>
+    <div class="contenedor">
+        <div class="mensaje">Ganaste un gran premio<br>
+            Muchos besitos y abrazos<br>
+            Una ayudaa, ya sabes de cuales 🥺😼
+        </div>
+        <canvas id="raspadita" width="300" height="200"></canvas>
+    </div>
+   
+    <div class="formulario">
+    <h2>¿Aceptas el premio?</h2>
+        <button class="boton si" onclick="mostrarRespuesta(true)">Sí 💕</button>
+        <button class="boton no" onclick="mostrarRespuesta(false)">No 😭</button>
+    </div>
+    <div id="resultado" class="resultado"></div>
+
+    <script>
+        const canvas = document.getElementById("raspadita");
+        const ctx = canvas.getContext("2d");
+        
+        function initCanvas() {
+            ctx.fillStyle = "#ccc";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+        
+        function scratch(event) {
+            const x = event.offsetX;
+            const y = event.offsetY;
+            ctx.globalCompositeOperation = "destination-out";
+            ctx.beginPath();
+            ctx.arc(x, y, 20, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        canvas.addEventListener("mousedown", () => {
+            canvas.addEventListener("mousemove", scratch);
+        });
+
+        canvas.addEventListener("mouseup", () => {
+            canvas.removeEventListener("mousemove", scratch);
+        });
+
+        initCanvas();
+
+
+        function mostrarRespuesta(respuesta) {
+            let resultadoDiv = document.getElementById("resultado");
+            resultadoDiv.innerHTML = ""; // Limpiar antes de agregar nuevo contenido
+
+            if (respuesta) {
+                resultadoDiv.innerHTML = "💖 Has reclamado el premio 💖";
+                crearAnimacion("❤️", 30); // Lanza muchos corazones
+
+                // Número de WhatsApp (reemplaza con el tuyo)
+                let numero = "50375591197"; // SIN el "+"
+                let mensaje = "¡Quiero mi premio lo mas pronto! 💖😍";
+                let url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
+
+                // Redirige a WhatsApp después de un pequeño delay
+                setTimeout(() => {
+                    window.open(url, "_blank");
+                }, 2000);
+                
+            } else {
+                resultadoDiv.innerHTML = "😢 Buenooo :c 😢";
+                crearAnimacion("😔", 30); // Lanza muchas caritas tristes
+                // Número de WhatsApp (reemplaza con el tuyo)
+                let numero = "50375591197"; // SIN el "+"
+                let mensaje = "Perdonenme pero ¡No acepto! :c";
+                let url = `https://api.whatsapp.com/send?phone=${numero}&text=${encodeURIComponent(mensaje)}`;
+
+                // Redirige a WhatsApp después de un pequeño delay
+                setTimeout(() => {
+                    window.open(url, "_blank");
+                }, 2000);
+            }
+        }
+
+        function crearAnimacion(simbolo, cantidad) {
+            for (let i = 0; i < cantidad; i++) {
+                let emoji = document.createElement("div");
+                emoji.innerHTML = simbolo;
+                emoji.classList.add("animacion");
+
+                // Posición aleatoria en la pantalla
+                emoji.style.left = Math.random() * window.innerWidth + "px";
+                emoji.style.top = Math.random() * window.innerHeight + "px";
+
+                // Tamaño aleatorio
+                let size = Math.random() * 40 + 20; 
+                emoji.style.fontSize = size + "px";
+
+                document.body.appendChild(emoji);
+
+                // Eliminar el emoji después de la animación
+                setTimeout(() => {
+                    emoji.remove();
+                }, 2000);
+            }
+        }
+    </script>
+</body>
+</html>

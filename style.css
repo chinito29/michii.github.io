@@ -1,0 +1,83 @@
+body {
+    background-color: #6fd482;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    font-family: 'Franklin Gothic Medium';
+    font-size: 50px;
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+.etiqueta {
+    width: 300px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #dca354;
+    margin: 20px;
+    background-color: #f4e1b9;
+    position: absolute;
+}
+
+#basicas {
+    top: 100px;
+    left: 50px;
+    background-color: #ffcc80;
+}
+
+#formato {
+    top: 1550px;
+    left: 500px;
+    background-color: #ffeb99;
+}
+
+#estructura {
+    top: 1550px;
+    left: 950px;
+    background-color: #99ff99;
+}
+
+#tablas {
+    top: 1950px;
+    left: 50px;
+    background-color: #80d4ff;
+}
+
+#listas {
+    top: 1950px;
+    left: 400px;
+    background-color: #ff9999;
+}
+
+#hipervinculos {
+    top: 1950px;
+    left: 750px;
+    background-color: #cc99ff;
+}
+
+#imagenes {
+    top: 2000px;
+    left: 1100px;
+    background-color: #66cccc;
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+p {
+    font-size: 14px;
+    color: #3f8da4;
+}
+
+code {
+    font-family: "Courier New", monospace;
+    background-color: #eee;
+    padding: 2px 4px;
+    border-radius: 4px;
+}
